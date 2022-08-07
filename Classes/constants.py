@@ -1,4 +1,6 @@
 import pygame
+from Assets import *
+
 
 FPS = 60
 
@@ -12,3 +14,5 @@ GOLD = (255,215,0)
 GREEN = (0,255,0)
 HOT_PINK = (255,0,127)
 YELLOW = (255,255,0)
+
+CHARACTER_PIC = pygame.transform.scale(pygame.image.load("Assets/Character.png"), (100, 100))

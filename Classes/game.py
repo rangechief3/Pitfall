@@ -1,10 +1,11 @@
 import pygame
 from .constants import *
-
+from .level import Level
 
 class Game:
 
     def __init__(self, win):
+        self.level = Level(win)
         self.win = win
 
     def main_loop(self):
