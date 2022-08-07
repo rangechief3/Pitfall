@@ -2,31 +2,23 @@ import pygame
 from Classes.constants import *
 import sys
 
+from Classes.game import Game
+
 #FPS = 60
 
 win = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 pygame.init()
-screen_width = 1200
-screen_height = 700
-# screen = pygame.display.set_mode((screen_width,screen_height))
-
-
 
 def main():
     running = True
     clock = pygame.time.Clock()
 
+    game = Game(win)
+
     while running:
         clock.tick(FPS)
-
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_ESCAPE]:
-            running = False
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+        
+        running = game.main_loop()
 
         pygame.display.update()
 
