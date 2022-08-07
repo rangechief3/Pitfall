@@ -3,7 +3,6 @@ from Classes.constants import *
 import sys
 
 #FPS = 60
-#test
 
 win = pygame.display.set_mode((0,0), pygame.FULLSCREEN)
 pygame.init()
