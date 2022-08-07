@@ -12,6 +12,14 @@ class Level:
         self.draw()
         pass
 
+    def move_player(self, direction):
+        if direction == "jump":
+            self.player.jump()
+        elif direction == "left":
+            self.player.move_left()
+        elif direction == "right":
+            self.player.move_right()
+
     def draw(self):
         self.win.fill(SKY_BLUE)
         self.player.draw()

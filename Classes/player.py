@@ -13,5 +13,28 @@ class Player:
 
         self.center = (x, y)
 
+    def move_left(self):
+        x = self.center[0]
+        x -= 5
+        if x <= 0:
+            self.center = (0, self.center[1])
+        else:
+            self.center = (x, self.center[1])
+
+    def move_right(self):
+        edge = self.win.get_width() - self.image.get_width()
+
+        x = self.center[0]
+        x += 5
+        
+        if x >= edge:
+            self.center = (edge, self.center[1])
+        else:
+            self.center = (x, self.center[1])
+
+    def jump(self):
+        #   gotta do some parabolic shit
+        pass
+
     def draw(self):
         self.win.blit(self.image, self.center)
