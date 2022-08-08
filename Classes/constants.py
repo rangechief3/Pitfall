@@ -16,3 +16,5 @@ HOT_PINK = (255,0,127)
 YELLOW = (255,255,0)
 
 CHARACTER_PIC = pygame.transform.scale(pygame.image.load("Assets/Character.png"), (100, 100))
+
+PLAYER_LAUNCH = 100

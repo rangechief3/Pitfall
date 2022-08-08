@@ -6,7 +6,9 @@ class Player:
     def __init__(self, win):
         self.image = CHARACTER_PIC
         self.win = win
-        
+        self.clock = pygame.time.Clock()
+        self.launch = PLAYER_LAUNCH
+
         x = 200 - self.image.get_width() // 2
         y = self.win.get_height() // 2
         y = y - self.image.get_height() // 2
@@ -33,8 +35,11 @@ class Player:
             self.center = (x, self.center[1])
 
     def jump(self):
-        #   gotta do some parabolic shit
-        pass
+        x, y = self.center
+
+        y -= self.launch
+        self.launch -= 10
+        self.center = (x, y)
 
     def draw(self):
         self.win.blit(self.image, self.center)
